@@ -2,12 +2,12 @@
   <h1 class="head py-3">Borgers</h1>
   <div class="row py-3">
     <div class="col-md-6">
-      <h2>Borgers that are not devoured</h2>
+      <h2 class="pbx  -3">Borgers that have not been devoured</h2>
 
       <ul>
         {{#each burgers}}
         {{#unless devoured}}
-        <h4>{{this.burger_name}} <button=id="devour{{this.burger_name}}" class="btn btn-lg btn-outline-dark">Devour da
+        <h4>{{this.burger_name}} <button=id="devour{{this.burger_name}}" class="btn btn-lg btn-outline-dark change-devour">Devour da
             borger</button></h4>
 
         </br>
@@ -20,7 +20,7 @@
 
     <div class="col-md-6">
 
-      <h2>Borgers that are devoured</h2>
+      <h2>Borgers that have been devoured</h2>
 
       <ul>
         {{#each burgers}}
@@ -40,8 +40,13 @@
       <form action="/" method="POST">
         <textarea type="text" name="burger"></textarea>
 
-        <button type="submit">Submit</button>
+        <button class="sub-btn" type="submit">Submit</button>
       </form>
     </div>
   </div>
+
+
+  <a href="/api/burgers">API Data burgers</a>
 </div>
+
+<script src="/assets/js/app.js"></script>
