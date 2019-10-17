@@ -1,20 +1,24 @@
 // import { pathToFileURL } from "url";
 
 $(function () {
-    $("#sub-btn").on("click", function (event) {
+    $(".create-form").on("submit", function (event) {
         event.preventDefault;
 
         var newBurg = {
             burger_name: $("#burgName").val().trim(),
-            devoured: false
+            devoured: 0
         };
 
         // Send the POST request.
-        $.post("/api/burgers", newBurg, function (data) {
-            console.log("created new burger");
-            // Reload the page to get the updated list
-            location.reload();
-        }
+        $.ajax("/api/burgers", {
+            type: "POST",
+            data: newBurg
+        }).then(
+            function () {
+                console.log("created new burger");
+                // Reload the page to get the updated list
+                location.reload();
+            }
         );
     });
 

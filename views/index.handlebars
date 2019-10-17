@@ -7,8 +7,12 @@
       <ul>
         {{#each burgers}}
         {{#unless devoured}}
-        <h4>{{this.burger_name}} <button=id="devour{{this.burger_name}}" class="btn btn-lg btn-outline-dark change-devour">Devour da
-            borger</button></h4>
+        <h4>
+          {{this.burger_name}}
+          <button=id="devour{{this.burger_name}}" class="btn btn-lg btn-outline-dark change-devour">
+            Devour da borger
+            </button>
+        </h4>
 
         </br>
         {{/unless}}
@@ -37,8 +41,8 @@
     <h2>Add a Borger</h2>
     <br>
     <div>
-      <form action="/" method="POST">
-        <textarea type="text" name="burger"></textarea>
+      <form class="create-form" action="/" method="POST">
+        <textarea id="burgName" type="text" name="burger"></textarea>
 
         <button class="sub-btn" type="submit">Submit</button>
       </form>
